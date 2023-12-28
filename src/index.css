@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
+}
+
+.navLinks {
+  @apply font-bold lg:text-lg md:ml-[50px] hover:text-[#ff5631] hover:border-b-4 hover:border-b-[#ff5631]
+}
+
+.neon {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.neon:hover {
+  color: #fff;
+  background: #ff5631;
+  box-shadow: 0 0 10px #ff5631, 0 0 40px #ff5631, 0 0 40px #ff5631;
+  transition-delay: 0.3s ;
+}
+
+.neon span {
+  position: absolute;
+  display: block;
+}
+
+.neon span:nth-child(1) {
+  margin-right: 50px;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff5631);
+}
+
+.neon:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.neon span:nth-child(3) {
+  margin-right: 50px;
+  bottom: 10px;
+  right: -50px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff5631);
+}
+
+.neon:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.5s;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
