@@ -5,16 +5,18 @@ import Services from "../components/Services";
 import Banner from "../components/Banner";
 import ServiceList from "../components/ServiceList";
 import ContactUs from "../components/ContactUs";
+import NavBar from "../components/NavBar";
 
 function Home() {
   return (
-   <div>
-    <VideoPlayer />
-    <About />
-    <Services />
+   <div className=" relative ">
+    <NavBar className=" " />
+    <VideoPlayer name="home"/>
+    <About name="about"/>
+    <Services name="services"/>
     <Banner />
     <ServiceList />
-    <ContactUs />
+    <ContactUs name="contact"/>
    </div>
   );
 }

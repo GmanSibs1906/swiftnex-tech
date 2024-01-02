@@ -2,7 +2,7 @@ import React from "react";
 
 function ContactUs() {
   return (
-    <div className=" w-full flex flex-col mt-[30px] md:mt-[60px] lg:mt-[100px] ">
+    <div className=" w-full flex flex-col mt-[30px] md:mt-[60px] lg:mt-[100px] " id="contact">
       <div className=" w-full  bg-[#1a1a1a] flex flex-col justify-center items-center pb-[20px]  ">
         <div className=" text-white my-[20px] text-[20px] italic mt-[40px] ">
           {" "}

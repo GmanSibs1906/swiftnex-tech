@@ -3,7 +3,7 @@ import {webDesign, mobileApp, support} from "../assets/images"
 
 function ServiceList() {
   return (
-    <div className=" w-full flex flex-col md:flex-row items-center  md:justify-around ">
+    <div className=" w-full flex flex-col md:flex-row items-center  md:justify-around " >
 
 {/* Web Design */}
         <div className=" w-[90vw] md:w-[25vw] flex flex-col items-center">

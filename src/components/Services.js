@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { startup, established } from "../assets/images";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 function Services() {
+
+  const [startUpOne, setStartUpOne] = useState(false);
+  const [startUpTwo, setStartUpTwo] = useState(false);
+  const [startUpThree, setStartUpThree] = useState(false);
+
+
+  const [estOne, setEstOne] = useState(false);
+  const [estTwo, setEstTwo] = useState(false);
+  const [estThree, setEstThree] = useState(false);
+
   return (
-    <div className=" my-[40px] flex flex-col ">
+    <div className=" my-[40px] flex flex-col " id="services">
+
+      {/* ----------STARTUP OFFER---------- */}
       <div className=" flex w-full flex-col md:flex-row ">
-        {/* start up offer  */}
         <div className=" w-full md:w-1/2 ">
           <img src={startup} alt="" className="" />
         </div>
         <div className=" w-full md:w-1/2 flex flex-col lg:px-[30px] px-[20px]  ">
-        <h2 className=" text-[20px] font-light underline text-[#ff5631] uppercase ">
+          <h2 className=" text-[20px] font-light underline text-[#ff5631] uppercase ">
             Are you a startup?
           </h2>
           <div className=" font-light text-[14px] mt-[20px] mb-[10px] ">
@@ -19,47 +32,126 @@ function Services() {
             the beginning. Here's part of what we offer:
           </div>
 
-          <div className=" uppercase text-[14px] mb-[10px] ">
-            1. Digital Presence Magic:
-          </div>
-          <div className=" font-light text-[18px] flex flex-col ">
-            <div className=" text-[14px] mb-[2px] ">
-            <span className=" text-[#ff5631] ">Websites That Wow:</span>{" "}
-              Your digital storefront to make a lasting first impression.
+          {/* -----startupOne----- */}
+          <div
+            className=" flex flex-col border border-[#ff5631] rounded-sm "
+            onClick={() => setStartUpOne(!startUpOne)}
+          >
+            <div
+              className={` py-[10px] px-[8px] uppercase text-[14px] font-semibold flex justify-between ${
+                !startUpOne ? " bg-[#ff5631] " : " bg-white "
+              } `}
+            >
+              <span>1. Digital Presence Magic</span>
+              <span className="  ">
+                <FontAwesomeIcon
+                  icon={startUpOne ? faChevronUp : faChevronDown}
+                  className={` ${!startUpOne ? "text-white" : "text-[#ff5631]"} `}
+                />
+              </span>
             </div>
-            <div className=" text-[14px] ">
-             
-              <span className=" text-[#ff5631] ">Mobile Apps That Matter:</span>{" "}
-              Stay connected with your audience on the go.
+
+            <div
+              className={` ${
+                startUpOne ? "flex flex-col px-[8px] pb-[10px]" : "hidden"
+              } `}
+            >
+              <div className=" font-light text-[18px] flex flex-col ">
+                <div className=" text-[14px] mb-[2px] mt-[5px] ">
+                  <span className=" text-[#ff5631] ">
+                  Websites That Wow:{" "}
+                  </span>{" "}
+                  Your digital storefront to make a lasting first impression.
+                </div>
+                <div className=" text-[14px] ">
+                  <span className=" text-[#ff5631] mb-[5px] ">
+                  Mobile Apps That Matter:{" "}
+                  </span>{" "}
+                  Stay connected with your audience on the go.
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className=" uppercase text-[14px] mb-[10px] mt-[20px] ">
-            2. Business Boosters:
-          </div>
-          <div className=" font-light text-[18px] flex flex-col ">
-            <div className=" text-[14px] mb-[2px] ">
-              <span className=" text-[#ff5631] ">Smart Systems:</span>{" "}
-              Streamlined solutions to make your operations efficient.
+           {/* -----startupTwo----- */}
+           <div
+            className=" flex flex-col border border-[#ff5631] rounded-sm mt-[20px] "
+            onClick={() => setStartUpTwo(!startUpTwo)}
+          >
+            <div
+              className={` py-[10px] px-[8px] uppercase text-[14px] font-semibold flex justify-between ${
+                !startUpTwo ? " bg-[#ff5631] " : " bg-white "
+              } `}
+            >
+              <span>2. Business Boosters:</span>
+              <span className="  ">
+                <FontAwesomeIcon
+                  icon={startUpTwo ? faChevronUp : faChevronDown}
+                  className={` ${!startUpTwo ? "text-white" : "text-[#ff5631]"} `}
+                />
+              </span>
             </div>
-            <div className=" text-[14px] ">
-              <span className=" text-[#ff5631] ">SEO Mastery: </span> Elevate
-              your visibility and stand out in the digital crowd.
+
+            <div
+              className={` ${
+                startUpTwo ? "flex flex-col px-[8px] pb-[10px]" : "hidden"
+              } `}
+            >
+              <div className=" font-light text-[18px] flex flex-col ">
+                <div className=" text-[14px] mb-[2px] mt-[5px] ">
+                  <span className=" text-[#ff5631] ">
+                  Smart Systems:{" "}
+                  </span>{" "}
+                  Streamlined solutions to make your operations efficient.
+                </div>
+                <div className=" text-[14px] ">
+                  <span className=" text-[#ff5631] mb-[5px] ">
+                  SEO Mastery:{" "}
+                  </span>{" "}
+                  Elevate your visibility and stand out in the digital crowd.
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className=" uppercase text-[14px] mb-[10px] mt-[20px] ">
-            3. Profit Fast, Profit Smart:
-          </div>
-          <div className=" font-light text-[18px] flex flex-col ">
-            <div className=" text-[14px] mb-[2px] ">
-              <span className=" text-[#ff5631] ">Innovative Strategies:</span>{" "}
-              Your digital storefront to make a lasting first impression.
+          {/* -----startupThree----- */}
+          <div
+            className=" flex flex-col border border-[#ff5631] rounded-sm mt-[20px] "
+            onClick={() => setStartUpThree(!startUpThree)}
+          >
+            <div
+              className={` py-[10px] px-[8px] uppercase text-[14px] font-semibold flex justify-between ${
+                !startUpThree ? " bg-[#ff5631] " : " bg-white "
+              } `}
+            >
+              <span>3. Profit Fast, Profit Smart:</span>
+              <span className="  ">
+                <FontAwesomeIcon
+                  icon={startUpThree ? faChevronUp : faChevronDown}
+                  className={` ${!startUpThree ? "text-white" : "text-[#ff5631]"} `}
+                />
+              </span>
             </div>
-            <div className=" text-[14px] ">
-           
-              <span className=" text-[#ff5631] ">Collaborate & Conquer: </span>{" "}
-              Join forces with us for strategic success.
+
+            <div
+              className={` ${
+                startUpThree ? "flex flex-col px-[8px] pb-[10px]" : "hidden"
+              } `}
+            >
+              <div className=" font-light text-[18px] flex flex-col ">
+                <div className=" text-[14px] mb-[2px] mt-[5px] ">
+                  <span className=" text-[#ff5631] ">
+                  Innovative Strategies:{" "}
+                  </span>{" "}
+                  Your digital storefront to make a lasting first impression.
+                </div>
+                <div className=" text-[14px] ">
+                  <span className=" text-[#ff5631] mb-[5px] ">
+                  Collaborate & Conquer:{" "}
+                  </span>{" "}
+                  Join forces with us for strategic success.
+                </div>
+              </div>
             </div>
           </div>
 
@@ -73,64 +165,143 @@ function Services() {
         </div>
       </div>
 
+      {/* ----------ESTABLISHED OFFER---------- */}
       <div className="  flex w-full flex-col md:flex-row mt-[40px] ">
-        {/* established up offer  */}
         <div className=" w-full md:w-1/2 flex flex-col lg:px-[30px] px-[20px] ">
           <h2 className=" text-[20px] font-light underline text-[#ff5631] uppercase ">
             Established business?
           </h2>
           <div className=" font-light text-[14px] mt-[20px] mb-[10px] ">
-            We are dedicated to supercharging your established business for unparalleled success. Here's how we can elevate your operations:
+            We are dedicated to supercharging your established business for
+            unparalleled success. Here's how we can elevate your operations:
           </div>
 
-          <div className=" uppercase text-[14px] mb-[10px] ">
-          1. Digital Transformation Delights:
-          </div>
-          <div className=" font-light text-[18px] flex flex-col ">
-            <div className=" text-[14px] mb-[2px] ">
-            <span className=" text-[#ff5631] ">Customized Company Systems : </span>{" "}
-            Tailored tech solutions for streamlined operations.
+          {/* -----estOne----- */}
+          <div
+            className=" flex flex-col border border-[#ff5631] rounded-sm "
+            onClick={() => setEstOne(!estOne)}
+          >
+            <div
+              className={` py-[10px] px-[8px] uppercase text-[14px] font-semibold flex justify-between ${
+                !estOne ? " bg-[#ff5631] " : " bg-white "
+              } `}
+            >
+              <span>1. Digital Transformation Delights:</span>
+              <span className="  ">
+                <FontAwesomeIcon
+                  icon={estOne ? faChevronUp : faChevronDown}
+                  className={` ${!estOne ? "text-white" : "text-[#ff5631]"} `}
+                />
+              </span>
             </div>
-            <div className=" text-[14px] ">
-         
-              <span className=" text-[#ff5631] ">Mobile Mastery: </span>{" "}
-              Harness the power of mobile apps for enhanced accessibility.
+
+            {/* <div className=" flex flex-col  "> */}
+            <div
+              className={` ${
+                estOne ? "flex flex-col px-[8px] pb-[10px]" : "hidden"
+              } `}
+            >
+              <div className=" font-light text-[18px] flex flex-col ">
+                <div className=" text-[14px] mb-[2px] mt-[5px] ">
+                  <span className=" text-[#ff5631] ">
+                    Customized Company Systems :{" "}
+                  </span>{" "}
+                  Tailored tech solutions for streamlined operations.
+                </div>
+                <div className=" text-[14px] ">
+                  <span className=" text-[#ff5631] mb-[5px] ">
+                    Mobile Mastery:{" "}
+                  </span>{" "}
+                  Harness the power of mobile apps for enhanced accessibility.
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className=" uppercase text-[14px] mb-[10px] mt-[20px] ">
-          2. Brand Brilliance Boosters:
-          </div>
-          <div className=" font-light text-[18px] flex flex-col ">
-            <div className=" text-[14px] mb-[2px] ">
-              <span className=" text-[#ff5631] ">Web Wizardry: </span>{" "}
-              Elevate your online presence with stunning and effective websites.
+          {/* -----estTwo----- */}
+          <div
+            className=" flex flex-col border border-[#ff5631] rounded-sm mt-[20px]"
+            onClick={() => setEstTwo(!estTwo)}
+          >
+            <div
+              className={` py-[10px] px-[8px] uppercase text-[14px] font-semibold flex justify-between ${
+                !estTwo ? " bg-[#ff5631] " : " bg-white "
+              } `}
+            >
+              <span>2. Brand Brilliance Boosters:</span>
+              <span className="  ">
+                <FontAwesomeIcon
+                  icon={estTwo ? faChevronUp : faChevronDown}
+                  className={` ${!estTwo ? "text-white" : "text-[#ff5631]"} `}
+                />
+              </span>
             </div>
-            <div className=" text-[14px] ">
-               <span className=" text-[#ff5631] ">SEO Sorcery:  </span> Propel your brand to the top and stand out in the digital realm.
+            <div
+              className={` ${
+                estTwo ? "flex flex-col px-[8px] pb-[10px]" : "hidden"
+              } `}
+            >
+              <div className=" font-light text-[18px] flex flex-col ">
+                <div className=" text-[14px] mb-[2px] mt-[5px] ">
+                  <span className=" text-[#ff5631] ">Web Wizardry: </span>{" "}
+                  Elevate your online presence with stunning and effective
+                  websites.
+                </div>
+                <div className=" text-[14px] ">
+                  <span className=" text-[#ff5631] mb-[5px] ">
+                    SEO Sorcery:{" "}
+                  </span>{" "}
+                  Propel your brand to the top and stand out in the digital
+                  realm.
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className=" uppercase text-[14px] mb-[10px] mt-[20px] ">
-            3. Profit Fast, Profit Smart:
-          </div>
-          <div className=" font-light text-[18px] flex flex-col ">
-            <div className=" text-[14px] mb-[2px] ">
-             <span className=" text-[#ff5631] ">Strategic Alliances: </span>{" "}
-            Join forces with us for innovative and profitable 
+          {/* -----estThree----- */}
+          <div
+            className=" flex flex-col border border-[#ff5631] rounded-sm mt-[20px]"
+            onClick={() => setEstThree(!estThree)}
+          >
+            <div
+              className={` py-[10px] px-[8px] uppercase text-[14px] font-semibold flex justify-between ${
+                !estThree ? " bg-[#ff5631] " : " bg-white "
+              } `}
+            >
+              <span>3. Profit Fast, Profit Smart:</span>
+              <span className="  ">
+                <FontAwesomeIcon
+                  icon={estThree ? faChevronUp : faChevronDown}
+                  className={` ${!estThree ? "text-white" : "text-[#ff5631]"} `}
+                />
+              </span>
             </div>
-            <div className=" text-[14px] ">
-            
-              <span className=" text-[#ff5631] ">Profit Accelerators: </span>{" "}
-              Expert strategies to boost profitability and market presence.
+            <div
+              className={` ${
+                estThree ? "flex flex-col px-[8px] pb-[10px]" : "hidden"
+              } `}
+            >
+              <div className=" font-light text-[18px] flex flex-col ">
+                <div className=" text-[14px] mb-[2px] mt-[5px] ">
+                  <span className=" text-[#ff5631] ">Strategic Alliances </span>{" "}
+                  Join forces with us for innovative and profitable
+                </div>
+                <div className=" text-[14px] ">
+                  <span className=" text-[#ff5631] mb-[5px] ">
+                    Profit Accelerators:{" "}
+                  </span>{" "}
+                  Expert strategies to boost profitability and market presence.
+                </div>
+              </div>
             </div>
           </div>
 
           <div className=" font-light text-[14px] mt-[20px] mb-[10px] ">
-          Join the league of successful businesses partnering with{" "}
+            Join the league of successful businesses partnering with{" "}
             <span className=" font-bold ">Swift</span>
             <span className=" font-bold text-[#ff5631] ">Nex</span>
-            <span className="font-bold"> Tech</span> - where simplicity meets sophistication, and excellence is our standard.
+            <span className="font-bold"> Tech</span> - where simplicity meets
+            sophistication, and excellence is our standard.
           </div>
         </div>
         <div className=" w-full md:w-1/2 ">

@@ -2057,13 +2057,14 @@
   </svg>
   
 </div>
+<div className=" md:hidden absolute bg-[#ffffffda] w-full h-full mt-[20px] "></div>
 
 {/* FNB
 62389453714
 258624
-DO121469 / 2251004
+DO121469 / 2251706
 
-259 */}
+126.68 */}
 
 </div>
 

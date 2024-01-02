@@ -9,7 +9,7 @@ import { picLogo } from "../assets/images";
 
 function About() {
   return (
-    <div className=" px-[50px] mt-[80px] ">
+    <div className=" px-[10px] md:px-[20px] lg:px-[50px] mt-[80px] " id="about">
       {/* heading */}
       <div className=" flex w-full justify-center ">
         <h1 className=" text-[26px] font-thin flex items-center border-b-[#ff5631] border-b ">

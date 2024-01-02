@@ -5,17 +5,17 @@ import textLogo from "./textLogo.png"
 import smallLogo from "./smallLogo.png"
 
 // video
-import vid from "./swiftnexvid.mp4"
+import vid from "./swiftnextech.mp4"
 
 // services
-import startup from "./startup.png"
-import established from "./established.png"
-import webDesign from "./webDesign.png"
-import mobileApp from "./mobileApp.png"
-import support from "./support.png"
+import startup from "./startup.jpg"
+import established from "./established.jpg"
+import webDesign from "./webDesign.jpg"
+import mobileApp from "./mobileApp.jpg"
+import support from "./support.jpg"
 
 // banner
-import banner from "./banner.png"
+import banner from "./banner.jpg"
 
 export {
     logo,
